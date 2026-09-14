@@ -145,7 +145,9 @@ st.markdown(
 
 st.title("2026 NFL Wins Pool")
 st.markdown("<p class='subtle'>1 point per win · 6 owners · 5 teams each</p>", unsafe_allow_html=True)
-
+if st.button("↻ Refresh standings", type="primary", use_container_width=True):
+    load_standings.clear()
+    st.rerun()
 try:
     standings = load_standings()
 except Exception as exc:
